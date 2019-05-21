@@ -25,6 +25,7 @@ h1 {
     font-weight: 600;
     font-size: 20px;
     text-transform: uppercase;
+    text-align: center;
 }  
 p {
     font-family: "Droid Serif", serif;
