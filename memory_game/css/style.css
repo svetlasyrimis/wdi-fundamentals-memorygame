@@ -17,7 +17,7 @@ a:hover {
     border-bottom:2px solid transparent;
 }
 a:hover {
-    color:white;
+    color:#F15B31;
 }
 nav {
     background-color: #00A6B3;
@@ -47,7 +47,13 @@ h1 {
     font-size: 45px;
     text-transform: uppercase;
     margin: 0;
-    }
+}
+h3 {
+    font-family: "Droid Serif", serif;
+    color:#0D2C40;
+    font-size: 20px;
+    font-weight: 800;
+}
 #instructions {
     font-family: "Droid Serif", serif;
     color:#0D2C40;
@@ -62,7 +68,8 @@ p {
 }
 .my-links {
     display: inline;
-    color: blue;
+    text-transform: initial;
+    color:#00A6B3;
     letter-spacing: 1px;
     font-weight: 600;
     font-size: 18px;

@@ -13,10 +13,9 @@ let cards = [
         rank: "king",
         suit: "hearts",
         cardImage: "images/king-of-hearts.png"
-
     },
     {
-        rank: "queen",
+        rank: "king",
         suit: "diamonds",
         cardImage: "images/king-of-diamonds.png"
     }
@@ -32,15 +31,19 @@ function createBoard() {
         document.getElementById('game-board').appendChild(cardElement); 
     }
 }
+
 function checkForMatch() {
     if (cardsInPlay[0] === cardsInPlay[1]) {
-        window.alert("You found a match!");
+        setTimeout(function(){
+            alert("You found a match!");
+        },300);
+        console.log("You found a match!");
     } else {
         alert("Sorry, try again.");
     }
 }
 
-function flipCard() {
+function flipCard(e) {
     const cardId = this.getAttribute('data-id');
     // console.log("User flipped " + cards[cardId].rank);
     // console.log(cards[cardId].cardImage);
