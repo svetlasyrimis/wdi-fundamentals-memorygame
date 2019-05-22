@@ -1,16 +1,17 @@
 body {
     text-align: center;
     margin:0;
-    }
+}
 a {
     text-decoration: none;
     font-family: "Raleway", sans-serif;
-    color:#F15B31;
+    color: white;
     letter-spacing: 1px;
     font-weight: 600;
     font-size: 18px;
     text-transform: uppercase;
-    margin: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 a:hover {
     border-bottom:2px solid transparent;
@@ -41,7 +42,6 @@ header {
 
 h1 {
     font-family: "Raleway", sans-serif;
-    color: #0D2C40;
     letter-spacing: 1px;
     font-weight: 400;
     font-size: 45px;
