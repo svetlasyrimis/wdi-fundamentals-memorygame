@@ -1,25 +1,32 @@
+
+
 let cards = [
     {
         rank: "queen",
         suit: "hearts",
-        cardImage: "images/queen-of-hearts.png"
+        cardImage: "images/queen-of-hearts.png",
+        isRevealed: false
     },
     {
         rank: "queen",
         suit: "diamonds",
-        cardImage: "images/queen-of-diamonds.png"
+        cardImage: "images/queen-of-diamonds.png",
+        isRevealed: false
     },
     {
         rank: "king",
         suit: "hearts",
-        cardImage: "images/king-of-hearts.png"
+        cardImage: "images/king-of-hearts.png",
+        isRevealed: false
     },
     {
         rank: "king",
         suit: "diamonds",
-        cardImage: "images/king-of-diamonds.png"
+        cardImage: "images/king-of-diamonds.png",
+        isRevealed: false
     }
 ];
+
 let cardsInPlay = [];
 
 function createBoard() {
@@ -30,33 +37,35 @@ function createBoard() {
         cardElement.addEventListener('click',flipCard);
         document.getElementById('game-board').appendChild(cardElement); 
     }
+    
 }
 
-function checkForMatch() {
-    if (cardsInPlay[0] === cardsInPlay[1]) {
-        setTimeout(function(){
-            alert("You found a match!");
-        },300);
-        console.log("You found a match!");
-    } else {
-        alert("Sorry, try again.");
-    }
-}
-
-function flipCard(e) {
+function flipCard() {
     const cardId = this.getAttribute('data-id');
-    // console.log("User flipped " + cards[cardId].rank);
-    // console.log(cards[cardId].cardImage);
-    // console.log(cards[cardId].suit)
+
     cardsInPlay.push(cards[cardId].rank);
-        this.setAttribute('src',cards[cardId].cardImage);
-    if (cardsInPlay.length === 2) {
+    
+    this.setAttribute('src',cards[cardId].cardImage);
+    console.log(cardsInPlay);
+    if (cardsInPlay.length % 2 === 0) {
         checkForMatch();
     }
 }
 
+function checkForMatch() {
+    if (cardsInPlay[cardsInPlay.length-2] === cardsInPlay[cardsInPlay.length-1]) {
+        setTimeout(function(){
+            alert("You found a match!");
+        },300);
+    } else {
+        setTimeout(function() {
+            alert("Sorry, try again.");
+        },300);
+    }
 
+}
 
 createBoard();
+
 
 
